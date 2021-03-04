@@ -5,12 +5,19 @@ using Music.Models;
 
 namespace Music.Tests
 {
-    [TestClass]
-    public class CollectionTest
+  [TestClass]
+  public class CollectionTest : IDisposable
+  {
+    public void Dispose()
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
+      Collection.ClearAll();
     }
+
+    [TestMethod]
+    public void CreateCollection_ShowArtistName_Abba()
+    {
+			Collection newCollection = new Collection("vinyl", "BABA");
+			Assert.AreEqual("ABBA", newCollection.Artist);
+    }
+  }
 }
