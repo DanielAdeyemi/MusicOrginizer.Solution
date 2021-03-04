@@ -14,9 +14,9 @@ namespace Music.Tests
     }
 
     [TestMethod]
-    public void CreateCollection_ShowArtistName_Abba()
+    public void CreateCollection_ShowArtistName_ABBA()
     {
-			Collection newCollection = new Collection("vinyl", "BABA");
+			Collection newCollection = new Collection("vinyl", "ABBA");
 			Assert.AreEqual("ABBA", newCollection.Artist);
     }
   }
