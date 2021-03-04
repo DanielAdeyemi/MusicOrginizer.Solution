@@ -19,5 +19,9 @@ namespace Music.Models
     {
       _instances.Clear();
     }
+    public static List<Collection> GetAll()
+    {
+      return _instances;
+    }
   }
 }
