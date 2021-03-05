@@ -8,12 +8,12 @@ namespace Music.Models
     public string Type { get; set; }
     public int Id { get; }
     public string Artist { get; set; }
-    public Collection(string type, string artist)
+    public Collection(string collectionType, string collectionArtist)
     {
-      Type = type;
-      Artist = artist;
-      Id = _instances.Count;
+      Type = collectionType;
+      Artist = collectionArtist;
       _instances.Add(this);
+      Id = _instances.Count;
     }
     public static void ClearAll()
     {

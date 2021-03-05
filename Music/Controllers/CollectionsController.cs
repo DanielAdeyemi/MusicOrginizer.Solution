@@ -19,11 +19,11 @@ namespace Music.Controllers
       return View();
     }
 
-    [HttpPost("/collections")] 
+    [HttpPost("/collections/new")] 
     public ActionResult Create(string collectionType, string collectionArtist)
     {
       Collection newCollection  = new Collection(collectionType, collectionArtist);
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", newCollection);
 
     }
   }
