@@ -10,7 +10,8 @@ namespace Music.Controllers
     [HttpGet("/collections")]
     public ActionResult Index()
     {
-      return View();
+      List<Collection> allCollections = Collection.GetAll();
+      return View(allCollections);
     }
     
     [HttpGet("/collections/new")]
@@ -24,7 +25,6 @@ namespace Music.Controllers
     {
       Collection newCollection  = new Collection(collectionType, collectionArtist);
       return RedirectToAction("Index", newCollection);
-
     }
   }
 }
